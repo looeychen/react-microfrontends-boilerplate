@@ -1,0 +1,14 @@
+[
+  {
+    "moduleName": "single-module-example",
+    "modulePath": "/user"
+  },
+  {
+    "moduleName": "multi-module-example/modules/material-manage",
+    "modulePath": "/material-manage"
+  },
+  {
+    "moduleName": "multi-module-example/modules/menu-manage",
+    "modulePath": "/menu-manage"
+  }
+]

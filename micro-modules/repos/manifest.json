@@ -1,0 +1,12 @@
+[
+  {
+    "name": "single-module-example",
+    "description": "单模块示例-用户模块",
+    "repository": "git@xxx.git"
+  },
+  {
+    "name": "multi-module-example",
+    "description": "多模块示例-包含素材管理和菜单管理",
+    "repository": "git@xxx.git"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "multi-module-example",
+  "version": "1.0.0",
+  "description": "多模块示例-包含素材管理和菜单管理",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@xxx.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "material-manage-module",
+  "version": "1.0.0",
+  "description": "素材管理模块",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "moduleInfo": {
+    "path": "/material-manage"
+  }
+}

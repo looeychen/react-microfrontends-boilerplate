@@ -1,0 +1,42 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "debug": false,
+        "useBuiltIns": true,
+        "targets": {
+          "browsers": [
+            "defaults",
+            "ie >= 11"
+          ]
+        }
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    "lodash",
+    "transform-runtime",
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    "transform-decorators-legacy",
+    "syntax-dynamic-import",
+    "dynamic-import-node",
+    "react-hot-loader/babel",
+    [
+      "import",
+      {
+        "libraryName": "antd"
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source"
+      ]
+    }
+  }
+}
