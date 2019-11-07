@@ -24,13 +24,7 @@
     "transform-decorators-legacy",
     "syntax-dynamic-import",
     "dynamic-import-node",
-    "react-hot-loader/babel",
-    [
-      "import",
-      {
-        "libraryName": "antd"
-      }
-    ]
+    "react-hot-loader/babel"
   ],
   "env": {
     "development": {

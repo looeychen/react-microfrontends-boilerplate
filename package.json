@@ -18,12 +18,15 @@
   },
   "author": "looeychen",
   "license": "ISC",
+  "keywords": [
+    "microfrontends",
+    "micro-frontends"
+  ],
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-import": "^1.12.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-react-transform": "^3.0.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -93,6 +96,7 @@
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "redux-api-middleware": "^3.0.1",
+    "redux-connect-decorator": "^0.2.1",
     "redux-thunk": "^2.3.0",
     "url-polyfill": "^1.1.5"
   }

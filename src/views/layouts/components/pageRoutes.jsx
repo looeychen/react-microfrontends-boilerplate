@@ -27,7 +27,7 @@ const getModulePath = (location) => {
 const registerModuleReducers = (reducers, store) => {
   const reducerModules = reducers && Object.keys(reducers)
   reducerModules.forEach((key) => {
-    store.reducers[key] = reducerModules[key]
+    store.reducers[key] = reducers[key]
   })
   store.replaceReducer(combineReducers(store.reducers))
 }
@@ -73,20 +73,37 @@ class PageRoutes extends React.Component {
 
   constructor(props) {
     super(props)
-    this.enabledModules = [] //启用的模块
+
+    //加载的模块
+    this.enabledModules = []
+
+    //内置模块
+    this.builtinModules = [
+      HomeModule
+    ]
+
+    //记录所有模块的modulePath
+    this.modulesPath = []
+
+    //注册内置模块
+    this.builtinModules.forEach(builtinModule => {
+      this.modulesPath.push(builtinModule.modulePath)
+      registerModuleReducers(builtinModule.moduleReducers, props.store)
+    })
+
     this.state = {
       loadedModules: {},     //已注册的模块
       loaded: false
     }
-
-    //注册内置模块store
-    registerModuleReducers(HomeModule.moduleReducers, props.store)
   }
 
   componentDidMount() {
     axios.get(`${microModulesApiUrl}?t=${(new Date()).getTime()}`).then(({ data }) => {
       if (!Array.isArray(data)) return
       this.enabledModules = data
+      this.modulesPath = this.modulesPath.concat(this.enabledModules.map(enabledModule => enabledModule.modulePath))
+
+      //初始加载模块
       const modulePath = getModulePath(this.props.location)
       const module = this.enabledModules.find(_mod => _mod.modulePath === modulePath)
       if (module) {
@@ -120,12 +137,6 @@ class PageRoutes extends React.Component {
     const loadedModulesArr = Object.keys(loadedModules)
     const modulePath = getModulePath(location)
 
-    //加载完成的模块path（包含全部内置模块）
-    let modulePaths = ['/']
-    if (loaded) {
-      modulePaths = modulePaths.concat(loadedModulesArr.map(key => loadedModules[key].modulePath))
-    }
-
     return (
       <Switch>
         <Route path='/' exact component={() => <HomeModule.moduleRoute {...pageProps} />} />
@@ -138,7 +149,7 @@ class PageRoutes extends React.Component {
             ) : null
           })
         }
-        {loaded && modulePaths.indexOf(modulePath) === -1 && <Route component={() => <NotMatch />} />}
+        {loaded && this.modulesPath.indexOf(modulePath) === -1 && <Route component={() => <NotMatch />} />}
       </Switch>
     )
   }
