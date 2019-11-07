@@ -1,12 +1,9 @@
 import React from 'react'
 import CSSModules from 'react-css-modules'
-import connect from 'redux-connect-decorator'
+import { connect } from 'react-redux'
 import { actions } from '../../redux/modules/userInfo'
 import styles from './index.module.less';
 
-@connect((state) => ({
-  // xxx: state.xxx
-}), { ...actions })
 @CSSModules(styles)
 class UserInfo extends React.Component {
   render() {
@@ -18,4 +15,4 @@ class UserInfo extends React.Component {
   }
 }
 
-export default UserInfo;
+export default connect(null, actions)(UserInfo)

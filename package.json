@@ -88,15 +88,14 @@
     "react-bootstrap-myui": "^2.0.16",
     "react-css-modules": "^4.7.11",
     "react-dom": "^16.7.0",
-    "react-hot-loader": "^4.12.10",
+    "react-hot-loader": "^4.12.16",
     "react-loadable": "^5.5.0",
-    "react-redux": "^7.0.0",
+    "react-redux": "^5.1.2",
     "react-router-dom": "^5.0.1",
     "react-router-redux": "^4.0.8",
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "redux-api-middleware": "^3.0.1",
-    "redux-connect-decorator": "^0.2.1",
     "redux-thunk": "^2.3.0",
     "url-polyfill": "^1.1.5"
   }
