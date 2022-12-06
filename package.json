@@ -83,7 +83,7 @@
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "qhistory": "^1.0.3",
-    "qs": "^6.9.0",
+    "qs": "^6.9.7",
     "react": "^16.7.0",
     "react-bootstrap-myui": "^2.0.16",
     "react-css-modules": "^4.7.11",
